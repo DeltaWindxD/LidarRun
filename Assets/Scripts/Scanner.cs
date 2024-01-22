@@ -25,9 +25,8 @@ public class Scanner : MonoBehaviour
     public void Fire(InputAction.CallbackContext ctx)
     {
 
-        Debug.Log("Shoot");
         Vector3 dir = new Vector3(Random.Range(-angle, angle), Random.Range(-angle, angle), 1).normalized;
-        if (Physics.Raycast(shootPoint.position, dir, out RaycastHit hit, HitMask))
+        if (Physics.Raycast(shootPoint.position, shootPoint.forward, out RaycastHit hit))
         {
             ParticleSystem.EmitParams emit = new ParticleSystem.EmitParams();
             emit.position = hit.point;
