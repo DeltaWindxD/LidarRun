@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
         PauseCanvas.SetActive(true);
         Time.timeScale = 0f;
         Paused = true;
-        GameObject.Find("PlayerCapsule").GetComponent<FirstPersonController>().enabled = false;
+        GameObject.Find("PlayerCamera").GetComponent<PlayerController>().enabled = false;
         Cursor.visible = true;
         
     }
@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour
         PauseCanvas.SetActive(false);
         Time.timeScale = 1f;
         Paused = false;
-        GameObject.Find("PlayerCapsule").GetComponent<FirstPersonController>().enabled = true;
+        GameObject.Find("PlayerCamera").GetComponent<PlayerController>().enabled = true;
         Cursor.visible = false;
         
     }
