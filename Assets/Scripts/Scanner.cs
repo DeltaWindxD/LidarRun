@@ -175,6 +175,7 @@ public class Scanner : MonoBehaviour
                 }
             } // for loop
             ApplyPositions();
+            Debug.Log(_radius);
         } // button press
         else
         {

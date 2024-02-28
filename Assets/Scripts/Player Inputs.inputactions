@@ -16,9 +16,9 @@
                 },
                 {
                     "name": "Scroll",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "cac80d31-4171-4b71-b608-2e8bf54c2f4d",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -39,7 +39,7 @@
                 {
                     "name": "",
                     "id": "f693120f-cf72-4544-8021-de5ccf5bcca9",
-                    "path": "<Mouse>/middleButton",
+                    "path": "<Mouse>/scroll/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
