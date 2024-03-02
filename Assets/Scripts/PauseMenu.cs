@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviour
         Paused = true;
         GameObject.Find("PlayerCamera").GetComponent<PlayerController>().enabled = false;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         
     }
 
@@ -49,6 +50,7 @@ public class PauseMenu : MonoBehaviour
         Paused = false;
         GameObject.Find("PlayerCamera").GetComponent<PlayerController>().enabled = true;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         
     }
 
