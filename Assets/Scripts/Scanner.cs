@@ -21,7 +21,7 @@ public class Scanner : MonoBehaviour
     private const string REJECT_LAYER_NAME = "PointReject";
     private const string TEXTURE_NAME = "PositionTexture";
     private const string RESOLUTION_PARAMETER_NAME = "Resolution";
-    
+
 
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private PlayerInput playerInput;
@@ -29,7 +29,7 @@ public class Scanner : MonoBehaviour
     [SerializeField] private GameObject _vfxContainer;
     [SerializeField] private Transform _castPoint;
     [SerializeField] private float _radius = 10f;
-    [SerializeField] private float _maxRadius = 10f;
+    [SerializeField] private float _maxRadius = 8.5f;
     [SerializeField] private float _minRadius = 1f;
     [SerializeField] private int _pointsPerScan = 40;
     [SerializeField] private float _range = 10f;
@@ -102,7 +102,7 @@ public class Scanner : MonoBehaviour
         _currentVFX.Reinit();
     }
 
-    private void CreateNewVisualEffect() // this is performance heavy lol
+    private void CreateNewVisualEffect() 
     {
         // make sure it only gets called once
         if (!_createNewVFX) return;
@@ -153,6 +153,7 @@ public class Scanner : MonoBehaviour
                     if (_positionsList.Count < resolution * resolution)
                     {
                         if (hit.collider.CompareTag(REJECT_LAYER_NAME)) continue;
+
                         _positionsList.Add(hit.point);
                         _lineRenderer.enabled = true;
                         _lineRenderer.SetPositions(new[]
@@ -175,7 +176,6 @@ public class Scanner : MonoBehaviour
                 }
             } // for loop
             ApplyPositions();
-            Debug.Log(_radius);
         } // button press
         else
         {
