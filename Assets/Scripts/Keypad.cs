@@ -11,7 +11,7 @@ public class Keypad : MonoBehaviour {
     [SerializeField] private Animator Door;
     [SerializeField] private Animator Door2;
 
-    private string Answer = "1471";
+    private const string ANSWER = "1471";
 
     void Update()
     {
@@ -31,7 +31,7 @@ public class Keypad : MonoBehaviour {
     {
         Ans.text.ToString();
 
-        if (Ans.text == Answer) 
+        if (Ans.text == ANSWER) 
         {
             Ans.text = "CORRECT";
             GameObject.Find("Door").layer = 0;

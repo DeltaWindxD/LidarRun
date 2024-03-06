@@ -113,7 +113,6 @@ public class Scanner : MonoBehaviour
         // create new VFX
         _currentVFX = Instantiate(_vfxPrefab, transform.position, Quaternion.identity, _vfxContainer.transform);
         _currentVFX.SetUInt(RESOLUTION_PARAMETER_NAME, (uint)resolution);
-        //_currentVFX.SetInt(PARTICLES_PER_SCAN_PARAMETER_NAME, _pointsPerScan);
 
         // create texture
         _texture = new Texture2D(resolution, resolution, TextureFormat.RGBAFloat, false);
