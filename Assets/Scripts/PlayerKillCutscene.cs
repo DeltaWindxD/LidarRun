@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Victory : MonoBehaviour
+public class PlayerKillCutscene : MonoBehaviour
 {
+
+    public GameObject Timeline;
     void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.name == "ExitDoor")
+        if(col.gameObject.name == "Enemy")
         {
-            Time.timeScale = 0f;
             GameObject.Find("PlayerCamera").GetComponent<PlayerController>().enabled = false;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Timeline.SetActive(true);
         }
+          
     }
 }
