@@ -7,11 +7,25 @@ public class PlayerKillCutscene : MonoBehaviour
 {
 
     public GameObject Timeline;
+
+    public GameObject Music;
+
+    public GameObject GameUi;
+
     void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.name == "Enemy")
         {
             GameObject.Find("PlayerCamera").GetComponent<PlayerController>().enabled = false;
+            GameObject.Find("fredmonster").layer = 0;
+            GameObject.Find("Cone").layer = 0;
+            GameObject.Find("Cube").layer = 0;
+            GameObject.Find("Mball").layer = 0;
+            GameObject.Find("Mball.001").layer = 0;   
+            GameObject.Find("Plane.001").layer = 0; 
+            GameObject.Find("Body").layer = 0;
+            GameUi.SetActive(false);
+            Music.SetActive(false); 
             Timeline.SetActive(true);
         }
           

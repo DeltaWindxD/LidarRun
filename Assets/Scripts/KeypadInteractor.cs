@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class KeypadInteractor : MonoBehaviour, IInteractable {
+public class KeypadInteractor : MonoBehaviour, IInteractable
+{
     public GameObject KeypadManager;
     public void Interact() {
         KeypadManager.SetActive(true);
@@ -11,4 +13,6 @@ public class KeypadInteractor : MonoBehaviour, IInteractable {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
+
 }
+
