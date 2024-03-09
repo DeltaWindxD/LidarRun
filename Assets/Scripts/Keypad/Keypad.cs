@@ -7,12 +7,15 @@ using UnityEngine.UI;
 
 public class Keypad : MonoBehaviour {
     public GameObject KeypadManager;
+
+    public GameObject EscapeTip;
     [SerializeField] private Text Ans;
     [SerializeField] private Animator Door;
     [SerializeField] private Animator Door2;
 
     private const string ANSWER = "1471";
 
+    //checks if escaped is pressed
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -22,11 +25,14 @@ public class Keypad : MonoBehaviour {
         }
     }
 
+    //adds the number pressed to the Ans text
     public void Number(int number)
     {
         Ans.text += number.ToString();
     }
 
+
+    //Checks if player typed teh right answer
     public void Execute()
     {
         Ans.text.ToString();
@@ -45,6 +51,7 @@ public class Keypad : MonoBehaviour {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             Ans.text = "";
+            EscapeTip.SetActive(true);
         }
         else
         {
@@ -52,6 +59,8 @@ public class Keypad : MonoBehaviour {
         }
     }
 
+
+    //stops the animation of the door
     IEnumerator StopDoor()
     {
         yield return new WaitForSeconds(0.3f);
@@ -61,11 +70,15 @@ public class Keypad : MonoBehaviour {
         Door2.enabled = false;
     }
 
+
+    //clears the text from the screen
     public void Clear()
     {
         Ans.text = "";
     }
 
+
+    //exits the keypad
     public void Exit()
     {
         KeypadManager.SetActive(false);

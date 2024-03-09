@@ -8,32 +8,33 @@ public class EnemyController : MonoBehaviour
     public float lookRadius = 10f;
 
     Transform target;
-    NavMeshAgent agent;
+    NavMeshAgent enemy;
 
     public GameObject player;
 
     void Start()
     {
         target = player.transform;
-        agent = GetComponent<NavMeshAgent>();
+        enemy = GetComponent<NavMeshAgent>();
     }
 
-
+    //Checks if player is inside of range and if so chase the player
     void Update()
     {
         float distance = Vector3.Distance(target.position, transform.position);
         
         if (distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
+            enemy.SetDestination(target.position);
 
-            if (distance <= agent.stoppingDistance)
+            if (distance <= enemy.stoppingDistance)
             {
                 FaceTarget();
             }
         }
     }
 
+    //Makes the enemy always face player
     void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
@@ -41,9 +42,4 @@ public class EnemyController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime *5);
     }
 
-    void OnDrawGizmosSelected ()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
-    }
 }

@@ -7,7 +7,7 @@ public class DoorOpener : MonoBehaviour, IInteractable
 
     [SerializeField] private Animator Door;
     [SerializeField] private Animator Door2;
-    // Start is called before the first frame update
+    //Starts the animtion of the doors and makes them visible
     public void Interact()
     {
         Door.SetBool("Open", true);

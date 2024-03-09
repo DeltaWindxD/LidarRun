@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class KeypadInteractor : MonoBehaviour, IInteractable
 {
+
+    //Pauses the rest of the game except the keypad which now gets showed
     public GameObject KeypadManager;
     public void Interact() {
         KeypadManager.SetActive(true);

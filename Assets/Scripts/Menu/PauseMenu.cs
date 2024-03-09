@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = false;
     }
 
-    // Update is called once per frame
+    //checks if player pressed escape
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -31,7 +31,8 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
-
+    
+    //Pauses the game and shows pause menu
     public void Stop()
     {
         PauseCanvas.SetActive(true);
@@ -43,6 +44,7 @@ public class PauseMenu : MonoBehaviour
         
     }
 
+    //Unpauses the game
     public void Play()
     {
         PauseCanvas.SetActive(false);
@@ -54,6 +56,7 @@ public class PauseMenu : MonoBehaviour
         
     }
 
+    //button to main menu
     public void MainMenuButton()
     {
         

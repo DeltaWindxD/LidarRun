@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Victory : MonoBehaviour
-{
+{   
+
+    //if player is colliding with the exit door it goes to the vicotrymenu screen
     void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.name == "ExitDoor")

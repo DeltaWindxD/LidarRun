@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerKill : MonoBehaviour
 {
+    //puts the losemenu on the screen
+    public GameObject loseMenu;
     void Update()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        Time.timeScale = 0f;
+        loseMenu.gameObject.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }

@@ -5,6 +5,8 @@ using UnityEngine.Audio;
 
 public class SettingsMenu : MonoBehaviour
 {
+
+    //Makes the player able to adjust the sound and fullscreen
     public AudioMixer audioMixer;
     public void SetVolume(float volume)
     {
