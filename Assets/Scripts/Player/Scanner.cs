@@ -7,6 +7,9 @@ using Random = UnityEngine.Random;
 
 public class Scanner : MonoBehaviour
 {
+
+    public AudioSource src;
+    public AudioClip sfx;
     private InputAction _fire;
     private InputAction _changeRadius;
     private List<Vector3> _positionsList = new();
@@ -137,6 +140,8 @@ public class Scanner : MonoBehaviour
         {
             for (int i = 0; i < _pointsPerScan; i++)
             {
+                src.clip = sfx;
+                src.Play();
                 // generate random point
                 Vector3 randomPoint = Random.insideUnitSphere * _radius;
                 randomPoint += _castPoint.position;

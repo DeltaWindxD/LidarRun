@@ -10,6 +10,8 @@ public class PlayerKillCutscene : MonoBehaviour
 
     public GameObject Music;
 
+    public GameObject Heartbeat;
+
     public GameObject GameUi;
 
     void OnCollisionEnter(Collision col)
@@ -27,6 +29,7 @@ public class PlayerKillCutscene : MonoBehaviour
             GameUi.SetActive(false);
             Music.SetActive(false); 
             Timeline.SetActive(true);
+            Heartbeat.SetActive(false);
         }
           
     }
