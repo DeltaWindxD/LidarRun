@@ -9,7 +9,6 @@ public class EnemyController : MonoBehaviour
 
     Transform target;
     NavMeshAgent enemy;
-
     public GameObject player;
 
     void Start()
