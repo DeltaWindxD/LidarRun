@@ -138,10 +138,10 @@ public class Scanner : MonoBehaviour
         // only call if button is pressed
         if (_fire.IsPressed())
         {
+            src.clip = sfx;
+            src.Play();
             for (int i = 0; i < _pointsPerScan; i++)
             {
-                src.clip = sfx;
-                src.Play();
                 // generate random point
                 Vector3 randomPoint = Random.insideUnitSphere * _radius;
                 randomPoint += _castPoint.position;

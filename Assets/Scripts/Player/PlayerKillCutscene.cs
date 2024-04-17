@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerKillCutscene : MonoBehaviour
 {
-    //Checks if player is colliding with the enemy and if so go to cutscene and activate all necessary
+    //Checks if player is colliding with the enemy and if so go to cutscene and activate all necessary objects and deactivate some other objects
     public GameObject Timeline;
 
     public GameObject Music;
