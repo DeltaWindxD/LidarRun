@@ -9,7 +9,6 @@ public class Scanner : MonoBehaviour
 {
 
     public AudioSource src;
-    public AudioClip sfx;
     private InputAction _fire;
     private InputAction _changeRadius;
     private List<Vector3> _positionsList = new();
@@ -138,7 +137,6 @@ public class Scanner : MonoBehaviour
         // only call if button is pressed
         if (_fire.IsPressed())
         {
-            src.clip = sfx;
             src.Play();
             for (int i = 0; i < _pointsPerScan; i++)
             {
